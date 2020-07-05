@@ -1,6 +1,7 @@
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/core/web/selenium/seleniumDriver/SeleniumBaseDriver.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/core/web/selenium/BaseWebPage.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/core/web/selenium/seleniumActions/SeleniumElements.java
+/Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/flows/BaseWebFlow.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/core/web/selenium/seleniumActions/SeleniumControls.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/utils/HandlePropertiesFile.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/reports/extent/ExtentReporter.java
@@ -8,7 +9,10 @@
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/core/web/selenium/seleniumDriver/BrowserType.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/core/web/selenium/seleniumActions/SeleniumBrowser.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/core/web/selenium/seleniumActions/SeleniumAlert.java
+/Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/flows/googleFlows/GoogleSearchFlow.java
+/Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/googlePages/GoogleResultPage.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/reports/listeners/TestNGListener.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/core/web/selenium/seleniumActions/SeleniumDropDown.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/utils/CustomLogger.java
 /Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/core/web/selenium/seleniumDriver/WebDriverFactory.java
+/Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/src/main/java/googlePages/GoogleSearchPage.java

@@ -1,9 +1,10 @@
 package flows.googleFlows;
 
 import flows.BaseWebFlow;
+import googlePages.GoogleResultPage;
+import googlePages.GoogleSearchPage;
 import org.openqa.selenium.WebDriver;
-import pages.googlePages.GoogleResultPage;
-import pages.googlePages.GoogleSearchPage;
+
 import reports.extent.CustomReporter;
 
 

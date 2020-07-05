@@ -11,7 +11,7 @@
       <![CDATA[PASS;GoogleSearchFlow->googleSearch: Search is done navigated to page Selenium - Google Search]]>
     </line>
     <line>
-      <![CDATA[INFO;GoogleSearchFlow->googleSearch: Search Result output - About 3,92,00,000 results (0.44 seconds) ]]>
+      <![CDATA[INFO;GoogleSearchFlow->googleSearch: Search Result output - About 4,09,00,000 results (0.46 seconds) ]]>
     </line>
     <line>
       <![CDATA[PASS;GoogleSearchPage->doSearch: Value Appium is entered on element By.name: q;/Users/subodhsingh/Desktop/subodh/automation/automationCoders/git/automationCoders/com/automationCoders/reports/screenShots/web/GoogleSearchPage.png]]>
@@ -23,7 +23,7 @@
       <![CDATA[PASS;GoogleSearchFlow->googleSearch: Search is done navigated to page Appium - Google Search]]>
     </line>
     <line>
-      <![CDATA[INFO;GoogleSearchFlow->googleSearch: Search Result output - About 26,80,000 results (0.38 seconds) ]]>
+      <![CDATA[INFO;GoogleSearchFlow->googleSearch: Search Result output - About 24,00,000 results (0.34 seconds) ]]>
     </line>
     <line>
       <![CDATA[PASS;GoogleSearchFlow->validateGoogleMenusIsEnabled: Gmail link is enabled on Google Search Page.]]>
@@ -44,20 +44,20 @@
       <![CDATA[PASS;GoogleSearchFlow->validateGoogleSearchControlsAreEnabled: I'm felling Lucky Button is enabled on Google Search Page.]]>
     </line>
   </reporter-output>
-  <suite started-at="2020-07-06T01:20:46 IST" name="Surefire suite" finished-at="2020-07-06T01:20:59 IST" duration-ms="12972">
+  <suite started-at="2020-07-06T01:32:34 IST" name="Surefire suite" finished-at="2020-07-06T01:32:46 IST" duration-ms="11873">
     <groups>
     </groups>
-    <test started-at="2020-07-06T01:20:46 IST" name="Surefire test" finished-at="2020-07-06T01:20:59 IST" duration-ms="12972">
+    <test started-at="2020-07-06T01:32:34 IST" name="Surefire test" finished-at="2020-07-06T01:32:46 IST" duration-ms="11873">
       <class name="googleTest.GoogleSearchTest">
-        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:46 IST" name="setUpSuite" finished-at="2020-07-06T01:20:46 IST" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="setUpSuite()[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:34 IST" name="setUpSuite" finished-at="2020-07-06T01:32:34 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpSuite -->
-        <test-method is-config="true" signature="getGoogleSearchApp()[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:46 IST" name="getGoogleSearchApp" finished-at="2020-07-06T01:20:50 IST" duration-ms="3767" status="PASS">
+        <test-method is-config="true" signature="getGoogleSearchApp()[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:34 IST" name="getGoogleSearchApp" finished-at="2020-07-06T01:32:38 IST" duration-ms="3976" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getGoogleSearchApp -->
-        <test-method signature="googleSearchTest(java.lang.String)[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:50 IST" name="googleSearchTest" data-provider="googleSearchTestData" finished-at="2020-07-06T01:20:53 IST" duration-ms="3546" status="PASS">
+        <test-method signature="googleSearchTest(java.lang.String)[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:38 IST" name="googleSearchTest" data-provider="googleSearchTestData" finished-at="2020-07-06T01:32:41 IST" duration-ms="3446" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -76,15 +76,15 @@
               <![CDATA[PASS;GoogleSearchFlow->googleSearch: Search is done navigated to page Selenium - Google Search]]>
             </line>
             <line>
-              <![CDATA[INFO;GoogleSearchFlow->googleSearch: Search Result output - About 3,92,00,000 results (0.44 seconds) ]]>
+              <![CDATA[INFO;GoogleSearchFlow->googleSearch: Search Result output - About 4,09,00,000 results (0.46 seconds) ]]>
             </line>
           </reporter-output>
         </test-method> <!-- googleSearchTest -->
-        <test-method is-config="true" signature="getGoogleSearchApp()[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:53 IST" name="getGoogleSearchApp" finished-at="2020-07-06T01:20:55 IST" duration-ms="1781" status="PASS">
+        <test-method is-config="true" signature="getGoogleSearchApp()[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:41 IST" name="getGoogleSearchApp" finished-at="2020-07-06T01:32:42 IST" duration-ms="1110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getGoogleSearchApp -->
-        <test-method signature="googleSearchTest(java.lang.String)[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:55 IST" name="googleSearchTest" data-provider="googleSearchTestData" finished-at="2020-07-06T01:20:57 IST" duration-ms="2250" status="PASS">
+        <test-method signature="googleSearchTest(java.lang.String)[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:42 IST" name="googleSearchTest" data-provider="googleSearchTestData" finished-at="2020-07-06T01:32:44 IST" duration-ms="2020" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -103,15 +103,15 @@
               <![CDATA[PASS;GoogleSearchFlow->googleSearch: Search is done navigated to page Appium - Google Search]]>
             </line>
             <line>
-              <![CDATA[INFO;GoogleSearchFlow->googleSearch: Search Result output - About 26,80,000 results (0.38 seconds) ]]>
+              <![CDATA[INFO;GoogleSearchFlow->googleSearch: Search Result output - About 24,00,000 results (0.34 seconds) ]]>
             </line>
           </reporter-output>
         </test-method> <!-- googleSearchTest -->
-        <test-method is-config="true" signature="getGoogleSearchApp()[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:57 IST" name="getGoogleSearchApp" finished-at="2020-07-06T01:20:58 IST" duration-ms="708" status="PASS">
+        <test-method is-config="true" signature="getGoogleSearchApp()[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:44 IST" name="getGoogleSearchApp" finished-at="2020-07-06T01:32:45 IST" duration-ms="502" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getGoogleSearchApp -->
-        <test-method signature="validateGoogleMenusControlsAreEnabled()[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:58 IST" name="validateGoogleMenusControlsAreEnabled" finished-at="2020-07-06T01:20:58 IST" duration-ms="69" status="PASS">
+        <test-method signature="validateGoogleMenusControlsAreEnabled()[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:45 IST" name="validateGoogleMenusControlsAreEnabled" finished-at="2020-07-06T01:32:45 IST" duration-ms="83" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[PASS;GoogleSearchFlow->validateGoogleMenusIsEnabled: Gmail link is enabled on Google Search Page.]]>
@@ -127,11 +127,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- validateGoogleMenusControlsAreEnabled -->
-        <test-method is-config="true" signature="getGoogleSearchApp()[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:58 IST" name="getGoogleSearchApp" finished-at="2020-07-06T01:20:59 IST" duration-ms="658" status="PASS">
+        <test-method is-config="true" signature="getGoogleSearchApp()[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:45 IST" name="getGoogleSearchApp" finished-at="2020-07-06T01:32:45 IST" duration-ms="529" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getGoogleSearchApp -->
-        <test-method signature="validateGoogleSearchControlsAreEnabled()[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:59 IST" name="validateGoogleSearchControlsAreEnabled" finished-at="2020-07-06T01:20:59 IST" duration-ms="36" status="PASS">
+        <test-method signature="validateGoogleSearchControlsAreEnabled()[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:45 IST" name="validateGoogleSearchControlsAreEnabled" finished-at="2020-07-06T01:32:45 IST" duration-ms="32" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[PASS;GoogleSearchFlow->validateGoogleSearchControlsAreEnabled: Google Search Button is enabled on Google Search Page.]]>
@@ -141,7 +141,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- validateGoogleSearchControlsAreEnabled -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:googleTest.GoogleSearchTest@8dbdac1]" started-at="2020-07-06T01:20:59 IST" name="closeBrowser" finished-at="2020-07-06T01:20:59 IST" duration-ms="124" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:googleTest.GoogleSearchTest@5e0826e7]" started-at="2020-07-06T01:32:45 IST" name="closeBrowser" finished-at="2020-07-06T01:32:46 IST" duration-ms="139" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

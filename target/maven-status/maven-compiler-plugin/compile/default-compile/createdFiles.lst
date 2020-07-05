@@ -1,12 +1,16 @@
+flows/googleFlows/GoogleSearchFlow.class
 reports/extent/ExtentReporter.class
 core/web/selenium/seleniumDriver/BrowserType.class
+googlePages/GoogleSearchPage.class
 core/web/selenium/seleniumActions/SeleniumAlert.class
 core/web/selenium/seleniumDriver/WebDriverFactory.class
 utils/CustomLogger.class
+flows/BaseWebFlow.class
 core/web/selenium/seleniumDriver/WebDriverFactory$1.class
 reports/extent/CustomReporter.class
 core/web/selenium/seleniumDriver/SeleniumBaseDriver.class
 core/web/selenium/BaseWebPage.class
+googlePages/GoogleResultPage.class
 core/web/selenium/seleniumActions/SeleniumBrowser.class
 utils/HandlePropertiesFile.class
 reports/extent/CustomReporter$Status.class
