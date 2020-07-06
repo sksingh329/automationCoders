@@ -15,7 +15,7 @@ public class SeleniumBrowser {
     public String getScreenShot(WebDriver driver, String fileName){
         TakesScreenshot screenshot = (TakesScreenshot)driver;
         File source = screenshot.getScreenshotAs(OutputType.FILE);
-        String destination = System.getProperty("user.dir")+ "/com/automationCoders/reports/screenShots/web/" +fileName+".png";
+        String destination = System.getProperty("user.dir")+ "/reports/screenShots/web/" +fileName+".png";
         try {
             FileUtils.copyFile(source,new File(destination));
         } catch (IOException e) {
