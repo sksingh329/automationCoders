@@ -1,13 +1,13 @@
 package googleTest;
 
 
-import flows.googleFlows.GoogleSearchFlow;
+import apps.flows.googleFlows.GoogleSearchFlow;
 import org.testng.annotations.*;
 import utils.CustomLogger;
 
 
 @Listeners(reports.listeners.TestNGListener.class)
-public class GoogleSearchTest extends BaseTest {
+public class GoogleSearchTest extends BaseTest2 {
     GoogleSearchFlow googleSearch;
     @BeforeMethod
     public void getGoogleSearchApp(){

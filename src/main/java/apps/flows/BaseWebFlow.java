@@ -1,4 +1,4 @@
-package flows;
+package apps.flows;
 
 import core.web.selenium.seleniumDriver.BrowserType;
 import core.web.selenium.seleniumDriver.SeleniumBaseDriver;

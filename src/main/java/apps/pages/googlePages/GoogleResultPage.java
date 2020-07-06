@@ -1,4 +1,4 @@
-package googlePages;
+package apps.pages.googlePages;
 
 import core.web.selenium.BaseWebPage;
 import org.openqa.selenium.By;
