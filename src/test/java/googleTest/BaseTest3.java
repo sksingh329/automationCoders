@@ -7,7 +7,7 @@ import utils.HandlePropertiesFile;
 import java.util.Properties;
 
 
-public class BaseTest2 {
+public class BaseTest3 {
     public Properties env;
     public Logger log;
     @BeforeClass

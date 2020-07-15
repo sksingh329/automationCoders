@@ -7,7 +7,7 @@ import utils.CustomLogger;
 
 
 @Listeners(reports.listeners.TestNGListener.class)
-public class GoogleSearchTest extends BaseTest2 {
+public class GoogleSearchTest extends BaseTest3 {
     GoogleSearchFlow googleSearch;
     @BeforeMethod
     public void getGoogleSearchApp(){
