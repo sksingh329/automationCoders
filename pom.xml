@@ -8,7 +8,7 @@
     <artifactId>automationCoders</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
-        <directory>/src/app/java</directory>
+        <directory>src/app/java</directory>
         <resources>
             <resource>
                 <directory>/src/app/java</directory>
