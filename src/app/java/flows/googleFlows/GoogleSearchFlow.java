@@ -1,12 +1,11 @@
-package apps.flows.googleFlows;
+package flows.googleFlows;
 
-import apps.flows.BaseWebFlow;
-import apps.pages.googlePages.GoogleResultPage;
-import apps.pages.googlePages.GoogleSearchPage;
+import flows.BaseWebFlow;
+import pages.web.googlePages.GoogleResultPage;
+import pages.web.googlePages.GoogleSearchPage;
 import org.openqa.selenium.WebDriver;
 
 import reports.extent.CustomReporter;
-
 
 public class GoogleSearchFlow extends BaseWebFlow {
     private final WebDriver driver;

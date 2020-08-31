@@ -1,4 +1,4 @@
-package apps.flows;
+package flows;
 
 import core.mobile.appium.androidDriver.AndroidAppType;
 import core.mobile.appium.androidDriver.AndroidBaseDriver;

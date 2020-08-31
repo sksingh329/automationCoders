@@ -6,7 +6,7 @@
     </listeners>
     <test name="Google Search" >
         <classes>
-            <class name="googleTest.GoogleSearchTest"/>
+            <class name="apps.web.googleTest.GoogleSearchTest"/>
         </classes>
     </test>
 </suite>

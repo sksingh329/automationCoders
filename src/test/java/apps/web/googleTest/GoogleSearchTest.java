@@ -1,16 +1,23 @@
-package googleTest;
+package apps.web.googleTest;
 
 
-import apps.flows.googleFlows.GoogleSearchFlow;
+import flows.googleFlows.GoogleSearchFlow;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.*;
 import utils.CustomLogger;
+import utils.HandlePropertiesFile;
+
+import java.util.Properties;
 
 
 @Listeners(reports.listeners.TestNGListener.class)
-public class GoogleSearchTest extends BaseTest3 {
+public class GoogleSearchTest {
+    public Properties env;
+    public Logger log;
     GoogleSearchFlow googleSearch;
     @BeforeMethod
     public void getGoogleSearchApp(){
+        env = HandlePropertiesFile.loadProperties("src/test/java/env/", "env.properties");
         log = CustomLogger.getLogger(GoogleSearchTest.class.getName());
         googleSearch = new GoogleSearchFlow(env.getProperty("browser"),env.getProperty("appUrl"));
     }
