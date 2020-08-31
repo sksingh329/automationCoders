@@ -12,7 +12,6 @@ hs_err_pid*
 ##############################
 ## Maven
 ##############################
-reports/
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -83,3 +82,8 @@ nb-configuration.xml
 ## OS X
 ##############################
 .DS_Store
+
+##############################
+## Project Folders
+##############################
+report*
