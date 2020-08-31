@@ -35,7 +35,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <includes><include>/src/core/java</include></includes>
+                    <includes><include>/src/app/java</include></includes>
                 </configuration>
             </plugin>
             <plugin>
