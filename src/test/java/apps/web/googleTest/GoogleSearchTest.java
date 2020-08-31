@@ -17,7 +17,7 @@ public class GoogleSearchTest {
     GoogleSearchFlow googleSearch;
     @BeforeMethod
     public void getGoogleSearchApp(){
-        env = HandlePropertiesFile.loadProperties("src/test/java/env/", "env.properties");
+        env = HandlePropertiesFile.loadProperties("src/test/resources/env/", "env.properties");
         log = CustomLogger.getLogger(GoogleSearchTest.class.getName());
         googleSearch = new GoogleSearchFlow(env.getProperty("browser"),env.getProperty("appUrl"));
     }

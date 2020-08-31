@@ -20,17 +20,17 @@ public class AndroidClockTest extends BaseAndroidPage {
         validateClockFlow = new ValidateClockFlow(env.getProperty("mobileDeviceName"), "native", app);
     }
 
-    @Test(enabled = true,description = "After app is launched menus items are shown as expected.")
+    @Test(enabled = false,description = "After app is launched menus items are shown as expected.")
     public void validateClockMenuItems(){
         boolean isMenuItemsDisplayed = validateClockFlow.validateClockMenuItems();
         System.out.println("Are Menu Items are displayed? "+isMenuItemsDisplayed);
     }
-    @Test(enabled = true,description = "To validate time on Clock screen is current time.")
+    @Test(enabled = false,description = "To validate time on Clock screen is current time.")
     public void validateTimeStampInClockMenu(){
         boolean isTimeStampValid = validateClockFlow.validateClockMenuTimeStamp();
         System.out.println("Timestamp validation on Clock screen is valid? "+isTimeStampValid);
     }
-    @Test(enabled = true,description = "This test case validates alarm time on Alarm screen are sorted. It assumes there are two alarm in app as pre-requisite.")
+    @Test(enabled = false,description = "This test case validates alarm time on Alarm screen are sorted. It assumes there are two alarm in app as pre-requisite.")
     public void validateAlarmsAreSorted(){
         boolean isAlarmsAreSorted = validateClockFlow.validateAlarmsAreSorted();
         System.out.println("Are alarms are sorted? "+isAlarmsAreSorted);

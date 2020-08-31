@@ -19,11 +19,11 @@ public class GmailTest {
 
     @BeforeMethod
     public void getGmailApp(){
-        env = HandlePropertiesFile.loadProperties("src/test/java/env/", "ENV_WEB_GMAIL_PROD.properties");
+        env = HandlePropertiesFile.loadProperties("src/test/resources/env/", "ENV_WEB_GMAIL_PROD.properties");
         //log = CustomLogger.getLogger(GmailTest.class.getName());
         gmailFlow = new GmailFlow(env.getProperty("browser"),env.getProperty("appUrl"));
     }
-    @Test
+    @Test(enabled = false)
     public void validateGmailTitle(){
         String expectedTitle = "Gmail";
         String actualTitle = gmailFlow.gmailTitle();

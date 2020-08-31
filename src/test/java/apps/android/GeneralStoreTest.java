@@ -18,7 +18,7 @@ public class GeneralStoreTest {
         String browserVersion = env.getProperty("mobileBrowserVersion");
         generalStore = new GeneralStoreFlow(env.getProperty("mobileDeviceName"),"browser",browserVersion);
     }
-    @Test
+    @Test(enabled = false)
     public void generalStoreAppLogin(){
         System.out.println("App is launched");
     }
