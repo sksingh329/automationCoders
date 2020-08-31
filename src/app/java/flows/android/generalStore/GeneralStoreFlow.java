@@ -1,6 +1,6 @@
-package flows.android;
+package flows.android.generalStore;
 
-import flows.BaseAndroidFlow;
+import core.mobile.appium.BaseAndroidFlow;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 

@@ -1,7 +1,7 @@
-package flows.googleFlows;
+package flows.web.google;
 
-import flows.BaseWebFlow;
-import pages.web.googlePages.GmailHomePage;
+import core.web.selenium.BaseWebFlow;
+import pages.web.google.GmailHomePage;
 import org.openqa.selenium.WebDriver;
 
 public class GmailFlow extends BaseWebFlow {

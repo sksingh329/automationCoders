@@ -1,6 +1,6 @@
-package apps.web.googleTest;
+package apps.web.google;
 
-import flows.googleFlows.GmailFlow;
+import flows.web.google.GmailFlow;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;

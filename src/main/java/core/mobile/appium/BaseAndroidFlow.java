@@ -1,11 +1,11 @@
-package flows;
+package core.mobile.appium;
 
 import core.mobile.appium.androidDriver.AndroidAppType;
 import core.mobile.appium.androidDriver.AndroidBaseDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
-public class BaseAndroidFlow extends AndroidBaseDriver {
+public abstract class BaseAndroidFlow extends AndroidBaseDriver {
     public AndroidDriver<AndroidElement> getAndroidDriver(String deviceName, String appType, String app){
         AndroidAppType appTypeEnum;
         String appTyeParam = appType.toUpperCase();

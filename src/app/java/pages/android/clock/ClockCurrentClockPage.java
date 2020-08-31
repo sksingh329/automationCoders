@@ -1,4 +1,4 @@
-package pages.android.clockPages;
+package pages.android.clock;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;

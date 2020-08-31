@@ -1,7 +1,7 @@
-package apps.web.googleTest;
+package apps.web.google;
 
 
-import flows.googleFlows.GoogleSearchFlow;
+import flows.web.google.GoogleSearchFlow;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.*;
 import utils.CustomLogger;

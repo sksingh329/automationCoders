@@ -1,6 +1,5 @@
-package pages.android.clockPages;
+package pages.android.clock;
 
-import core.mobile.appium.BaseAndroidPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;

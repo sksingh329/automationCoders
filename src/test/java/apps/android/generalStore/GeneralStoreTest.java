@@ -1,6 +1,6 @@
-package apps.android;
+package apps.android.generalStore;
 
-import flows.android.GeneralStoreFlow;
+import flows.android.generalStore.GeneralStoreFlow;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.HandlePropertiesFile;

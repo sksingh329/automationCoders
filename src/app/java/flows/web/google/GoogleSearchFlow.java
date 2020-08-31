@@ -1,8 +1,8 @@
-package flows.googleFlows;
+package flows.web.google;
 
-import flows.BaseWebFlow;
-import pages.web.googlePages.GoogleResultPage;
-import pages.web.googlePages.GoogleSearchPage;
+import core.web.selenium.BaseWebFlow;
+import pages.web.google.GoogleResultPage;
+import pages.web.google.GoogleSearchPage;
 import org.openqa.selenium.WebDriver;
 
 import reports.extent.CustomReporter;

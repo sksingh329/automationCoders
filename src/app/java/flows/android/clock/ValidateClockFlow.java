@@ -1,10 +1,10 @@
 package flows.android.clock;
 
-import flows.BaseAndroidFlow;
-import pages.android.clockPages.ClockAlarmPage;
-import pages.android.clockPages.ClockCreateAlarmsPage;
-import pages.android.clockPages.ClockCurrentClockPage;
-import pages.android.clockPages.ClockMenuPage;
+import core.mobile.appium.BaseAndroidFlow;
+import pages.android.clock.ClockAlarmPage;
+import pages.android.clock.ClockCreateAlarmsPage;
+import pages.android.clock.ClockCurrentClockPage;
+import pages.android.clock.ClockMenuPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import reports.extent.CustomReporter;

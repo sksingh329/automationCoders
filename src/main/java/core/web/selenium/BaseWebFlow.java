@@ -1,4 +1,4 @@
-package flows;
+package core.web.selenium;
 
 import core.mobile.appium.androidDriver.AndroidAppType;
 import core.web.selenium.seleniumDriver.BrowserType;
@@ -7,7 +7,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.WebDriver;
 
-public class BaseWebFlow extends SeleniumBaseDriver {
+public abstract class BaseWebFlow extends SeleniumBaseDriver {
    public WebDriver getWebDriver(String browser){
         BrowserType browserType;
         String browserParam = browser.toUpperCase();
