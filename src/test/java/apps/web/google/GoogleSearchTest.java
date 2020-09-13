@@ -3,8 +3,9 @@ package apps.web.google;
 
 import flows.web.google.GoogleSearchFlow;
 import org.apache.logging.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.*;
-import utils.CustomLogger;
+import utils.assertions.TestValidations;
 import utils.HandlePropertiesFile;
 
 import java.util.Properties;
@@ -15,29 +16,25 @@ public class GoogleSearchTest {
     public Properties env;
     public Logger log;
     GoogleSearchFlow googleSearch;
+    TestValidations validate;
     @BeforeMethod
     public void getGoogleSearchApp(){
         env = HandlePropertiesFile.loadProperties("src/test/resources/env/", "env.properties");
-        log = CustomLogger.getLogger(GoogleSearchTest.class.getName());
+        validate = new TestValidations();
         googleSearch = new GoogleSearchFlow(env.getProperty("browser"),env.getProperty("appUrl"));
     }
     @Test(testName = "Validate Google Menu Controls Are Enabled")
     public void validateGoogleMenusControlsAreEnabled(){
-        log.info("*********Test Start - validateGoogleMenusControlsAreEnabled**********");
         googleSearch.validateGoogleMenusIsEnabled();
-        log.info("*********Test End - validateGoogleMenusControlsAreEnabled**********");
     }
     @Test(testName = "Validate Google Search Controls Are Enabled")
     public void validateGoogleSearchControlsAreEnabled(){
-        log.info("*********Test Start - validateGoogleSearchControlsAreEnabled**********");
         googleSearch.validateGoogleSearchControlsAreEnabled();
-        log.info("*********Test End - validateGoogleSearchControlsAreEnabled**********");
     }
     @Test(testName = "Google Search",dataProvider = "googleSearchTestData")
     public void googleSearchTest(String searchValue){
-        log.info("*********Test Start - googleSearchTest**********");
-        googleSearch.googleSearch(searchValue);
-        log.info("*********Test End - googleSearchTest**********");
+        String resultStat = googleSearch.googleSearch(searchValue);
+        validate.checkNotNull(resultStat);
     }
     @DataProvider
     public Object[][] googleSearchTestData(){

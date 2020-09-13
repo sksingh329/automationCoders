@@ -4,7 +4,7 @@ import core.mobile.appium.BaseAndroidPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;
-import reports.extent.CustomReporter;
+import reports.extent.ReporterUtils;
 
 import java.util.List;
 
@@ -89,7 +89,7 @@ public class ClockAlarmPage extends BaseAndroidPage {
         elemDigitalArrow.get(alarmPos-1).click();
         //androidDriver.findElement(idDigitalDelete).click();
         //TODO - Validate alarm is deleted using index
-        CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": Navigated to Delete Alarm",screenshotPath);
+        ReporterUtils.setReporter(ReporterUtils.Status.PASS,methodInfo+": Navigated to Delete Alarm",screenshotPath);
     }
     private String getAmPm(String time){
         return time.substring(time.length()-2);

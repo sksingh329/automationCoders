@@ -35,11 +35,13 @@ public class ClockMenuPage extends BaseAndroidPage {
     public ClockCurrentClockPage navigateToClockScreen(){
         //androidDriver.findElementByXPath(xPathMenuClock).click();
         System.out.println("Reached here");
-        click(getAndroidElement(androidDriver,"//*[@text='CLOCK1']"));
+        //TODO - Fix getAndroidElement issue
+        // click(getAndroidElement(androidDriver,"//*[@text='CLOCK1']"));
         return new ClockCurrentClockPage(androidDriver);
     }
     public ClockAlarmPage navigateToAlarmScreen(){
         //androidDriver.findElementByXPath(xPathMenuAlarm).click();
+        //TODO - Fix getAndroidElement issue
         click(getAndroidElement(androidDriver,xPathMenuAlarm));
         return new ClockAlarmPage(androidDriver);
     }
