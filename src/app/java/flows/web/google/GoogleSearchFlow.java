@@ -20,11 +20,10 @@ public class GoogleSearchFlow extends BaseWebFlow {
         String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
         GoogleSearchPage searchPage = new GoogleSearchPage(driver);
         GoogleResultPage resultPage = searchPage.doSearch(searchValue);
-        if(resultPage!=null)
-            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Search is done navigated to page "+resultPage.getTitle(driver));
-        if(resultPage.getResultStat()!=null){
+        if(resultPage!=null){
             searchResultStat = resultPage.getResultStat();
-            ReporterUtils.log(ReporterUtils.Status.INFO,methodName,"Search is done navigated to page "+resultPage.getTitle(driver));
+            if(searchResultStat!=null)
+                ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Search is done and navigated to page "+resultPage.getTitle(driver));
         }
         return searchResultStat;
     }

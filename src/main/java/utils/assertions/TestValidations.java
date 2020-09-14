@@ -5,6 +5,8 @@ import reports.extent.ReporterUtils;
 
 public class TestValidations {
     public TestValidations(){}
+    //TODO - Implement generic for parameters
+    //TODO - Add method for contains, regular expression
     public void checkEquals(String actual, String expected){
         String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
         if(actual.equals(expected))

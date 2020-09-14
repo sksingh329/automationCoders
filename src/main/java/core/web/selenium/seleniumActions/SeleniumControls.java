@@ -32,7 +32,25 @@ public class SeleniumControls extends SeleniumDropDown {
         return true;
     }
     public boolean submit(WebElement elem){
-        elem.submit();
+        return submit(elem,false,null,null);
+    }
+    public boolean submit(WebElement elem,boolean takeScreenshot,WebDriver driver,String screenshotName){
+        String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
+        String locator = getLocator(elem.toString());
+        try{
+            elem.submit();
+        }
+        catch (Exception ex) {
+            String screenshotPath = getScreenShot(driver,"CLick");
+            String errorMessage = "Exception occurred while submit operation <p>elem - "+ locator +"</p>~=/ExceptionMessage -"+ ex.getMessage();
+            throw new CustomExceptions(methodName,errorMessage,screenshotPath);
+        }
+        if(takeScreenshot){
+            String screenshotPath = getScreenShot(driver,screenshotName);
+            ReporterUtils.logWithScreenshot(ReporterUtils.Status.PASS,methodName,"Element is submitted <p>elem - "+locator+"</p>",screenshotPath);
+        }
+        else
+            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Element is submitted <p>elem - "+locator+"</p>");
         return true;
     }
     public boolean type(WebElement elem,String value){
@@ -59,6 +77,26 @@ public class SeleniumControls extends SeleniumDropDown {
         return true;
     }
     public String getText(WebElement elem){
-        return elem.getText();
+        return getText(elem,false,null,null);
+    }
+    public String getText(WebElement elem, boolean takeScreenshot,WebDriver driver,String screenshotName){
+        String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
+        String locator = getLocator(elem.toString());
+        String elemText;
+        try{
+            elemText = elem.getText();
+        }
+        catch (Exception ex) {
+            String screenshotPath = getScreenShot(driver,"CLick");
+            String errorMessage = "Exception occurred while getText operation <p>elem - "+ locator +"</p>~=/ExceptionMessage -"+ ex.getMessage();
+            throw new CustomExceptions(methodName,errorMessage,screenshotPath);
+        }
+        if(takeScreenshot){
+            String screenshotPath = getScreenShot(driver,screenshotName);
+            ReporterUtils.logWithScreenshot(ReporterUtils.Status.PASS,methodName,"Text is retrieved from element <p>elem - "+locator+"</p> Output - "+elemText,screenshotPath);
+        }
+        else
+            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Text is retrieved from element <p>elem - "+locator+"</p> Output - "+elemText);
+        return elemText;
     }
 }
