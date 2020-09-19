@@ -7,7 +7,7 @@ import pages.android.clock.ClockCurrentClockPage;
 import pages.android.clock.ClockMenuPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import reports.extent.CustomReporter;
+import reports.extent.ReporterUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -49,6 +49,6 @@ public class ValidateClockFlow extends BaseAndroidFlow {
         ClockMenuPage clockMenuPage = new ClockMenuPage(androidDriver);
         ClockAlarmPage clockAlarmPage = clockMenuPage.navigateToAlarmScreen();
         clockAlarmPage.deleteAlarm(hour, minute, amPm);
-        CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": Search is done navigated to page");
+        ReporterUtils.setReporter(ReporterUtils.Status.PASS,methodInfo+": Search is done navigated to page");
     }
 }

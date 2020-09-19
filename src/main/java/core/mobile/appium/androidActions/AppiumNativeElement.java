@@ -4,10 +4,9 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriverException;
-import reports.extent.CustomReporter;
+import reports.extent.ReporterUtils;
 
-public class AppiumNativeElements extends AppiumNative{
+public class AppiumNativeElement extends AppiumNative{
     public AndroidElement getAndroidElement(AndroidDriver<AndroidElement> androidDriver, By locator){
         AndroidElement elem = androidDriver.findElement(locator);
         return elem;
@@ -20,14 +19,14 @@ public class AppiumNativeElements extends AppiumNative{
         }
         catch(NoSuchElementException exception){
             System.out.println(exception.toString());
-            CustomReporter.setReporter(CustomReporter.Status.FAIL,methodInfo+": Element not found "+locator+"Exception message - "+exception.toString());
+            ReporterUtils.setReporter(ReporterUtils.Status.FAIL,methodInfo+": Element not found "+locator+"Exception message - "+exception.toString());
         }
         catch(NullPointerException exception){
             System.out.println(exception.toString());
-            CustomReporter.setReporter(CustomReporter.Status.FAIL,methodInfo+": Element not found "+locator+"Exception message - "+exception.toString());
+            ReporterUtils.setReporter(ReporterUtils.Status.FAIL,methodInfo+": Element not found "+locator+"Exception message - "+exception.toString());
         }
 
-        CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": Element found "+locator);
+        ReporterUtils.setReporter(ReporterUtils.Status.PASS,methodInfo+": Element found "+locator);
         return elem;
     }
 }

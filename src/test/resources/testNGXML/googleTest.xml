@@ -1,9 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="Google Search Sanity" verbose="1" >
-    <listeners>
-        <listener class-name="reports.listeners.TestNGListener"/>
-    </listeners>
     <test name="Google Search" >
         <classes>
             <class name="apps.web.google.GoogleSearchTest"/>

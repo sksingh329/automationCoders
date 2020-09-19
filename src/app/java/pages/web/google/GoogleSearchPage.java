@@ -3,9 +3,7 @@ package pages.web.google;
 import core.web.selenium.BaseWebPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import reports.extent.CustomReporter;
-import utils.CustomLogger;
-
+import reports.extent.ReporterUtils;
 
 public class GoogleSearchPage extends BaseWebPage {
     private final By txtGoogleSearch = By.name("q");
@@ -19,36 +17,29 @@ public class GoogleSearchPage extends BaseWebPage {
     private final WebDriver pageDriver;
     public GoogleSearchPage(WebDriver driver){
         this.pageDriver = driver;
-        log = CustomLogger.getLogger(GoogleSearchPage.class.getName());
     }
 
     public boolean isBtnGoogleSearchEnabled(){
-        return isEnabled(pageDriver,btnGoogleSearch);
+        return isEnabled(getWebElement(pageDriver,btnGoogleSearch));
     }
     public boolean isBtnImFellingLuckyEnabled(){
-        return isEnabled(pageDriver,btnImFellingLucky);
+        return isEnabled(getWebElement(pageDriver,btnImFellingLucky));
     }
     public boolean isLinkGmailEnabled(){
-        return isEnabled(pageDriver,linkGmail);
+        return isEnabled(getWebElement(pageDriver,linkGmail));
     }
     public boolean isLinkImagesEnabled(){
-        return isEnabled(pageDriver,linkImages);
+        return isEnabled(getWebElement(pageDriver,linkImages));
     }
     public boolean isLinkGoogleAppsEnabled(){
-        return isEnabled(pageDriver,linkGoogleApps);
+        return isEnabled(getWebElement(pageDriver,linkGoogleApps));
     }
     public boolean isLinkSignInEnabled(){
-        return isEnabled(pageDriver,linkSignIn);
+        return isEnabled(getWebElement(pageDriver,linkSignIn));
     }
-
-
     public GoogleResultPage doSearch(String text){
-        String methodInfo = "GoogleSearchPage->doSearch";
-        String screenshotPath = getScreenShot(pageDriver,"GoogleSearchPage");
-        if(type(getWebElement(pageDriver,txtGoogleSearch),text))
-            CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo +": Value "+text+" is entered on element "+txtGoogleSearch,screenshotPath);
-        if(click(getWebElement(pageDriver,btnGoogleSearch)))
-            CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo + btnGoogleSearch+" is clicked");
+        type(getWebElement(pageDriver,txtGoogleSearch),text);
+        click(getWebElement(pageDriver,btnGoogleSearch),true,pageDriver,"GoogleSearch");
         return new GoogleResultPage(pageDriver);
     }
 }

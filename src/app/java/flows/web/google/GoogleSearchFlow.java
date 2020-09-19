@@ -5,7 +5,7 @@ import pages.web.google.GoogleResultPage;
 import pages.web.google.GoogleSearchPage;
 import org.openqa.selenium.WebDriver;
 
-import reports.extent.CustomReporter;
+import reports.extent.ReporterUtils;
 
 public class GoogleSearchFlow extends BaseWebFlow {
     private final WebDriver driver;
@@ -15,45 +15,30 @@ public class GoogleSearchFlow extends BaseWebFlow {
         driver.manage().window().maximize();
     }
     public WebDriver getDriver(){return driver;}
-    public void googleSearch(String searchValue){
-        String methodInfo = "GoogleSearchFlow->googleSearch";
+    public String googleSearch(String searchValue){
+        String searchResultStat = null;
+        String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
         GoogleSearchPage searchPage = new GoogleSearchPage(driver);
         GoogleResultPage resultPage = searchPage.doSearch(searchValue);
-        if(resultPage!=null)
-            CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": Search is done navigated to page "+resultPage.getTitle(driver));
-        if(resultPage.getResultStat()!=null)
-            CustomReporter.setReporter(CustomReporter.Status.INFO,methodInfo+": Search Result output - "+resultPage.getResultStat());
+        if(resultPage!=null){
+            searchResultStat = resultPage.getResultStat();
+            if(searchResultStat!=null)
+                ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Search is done and navigated to page "+resultPage.getTitle(driver));
+        }
+        return searchResultStat;
     }
-    public void validateGoogleMenusIsEnabled(){
-        String methodInfo = "GoogleSearchFlow->validateGoogleMenusIsEnabled";
+    public boolean validateGoogleMenusIsEnabled(){
+        String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
         GoogleSearchPage searchPage = new GoogleSearchPage(driver);
-        if(searchPage.isLinkGmailEnabled())
-            CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": Gmail link is enabled on Google Search Page.");
-        else
-            CustomReporter.setReporter(CustomReporter.Status.FAIL,methodInfo+": Gmail link is enabled on Google Search Page.");
-        if(searchPage.isLinkImagesEnabled())
-            CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": Images link is enabled on Google Search Page.");
-        else
-            CustomReporter.setReporter(CustomReporter.Status.FAIL,methodInfo+": Images link is enabled on Google Search Page.");
-        if(searchPage.isLinkGoogleAppsEnabled())
-            CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": Google Apps link is enabled on Google Search Page.");
-        else
-            CustomReporter.setReporter(CustomReporter.Status.FAIL,methodInfo+": Google Apps link is enabled on Google Search Page.");
-        if(searchPage.isLinkSignInEnabled())
-            CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": Sign In link is enabled on Google Search Page.");
-        else
-            CustomReporter.setReporter(CustomReporter.Status.FAIL,methodInfo+": Sign In link is enabled on Google Search Page.");
+        return searchPage.isLinkGmailEnabled() &&
+        searchPage.isLinkImagesEnabled() &&
+        searchPage.isLinkGoogleAppsEnabled() &&
+        searchPage.isLinkSignInEnabled();
     }
-    public void validateGoogleSearchControlsAreEnabled(){
-        String methodInfo = "GoogleSearchFlow->validateGoogleSearchControlsAreEnabled";
+    public boolean validateGoogleSearchControlsAreEnabled(){
+        String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
         GoogleSearchPage searchPage = new GoogleSearchPage(driver);
-        if(searchPage.isBtnGoogleSearchEnabled())
-            CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": Google Search Button is enabled on Google Search Page.");
-        else
-            CustomReporter.setReporter(CustomReporter.Status.FAIL,methodInfo+": Google Search Button link is enabled on Google Search Page.");
-        if(searchPage.isBtnImFellingLuckyEnabled())
-            CustomReporter.setReporter(CustomReporter.Status.PASS,methodInfo+": I'm felling Lucky Button is enabled on Google Search Page.");
-        else
-            CustomReporter.setReporter(CustomReporter.Status.FAIL,methodInfo+": I'm felling Lucky Button link is enabled on Google Search Page.");
+        return searchPage.isBtnGoogleSearchEnabled() &&
+        searchPage.isBtnImFellingLuckyEnabled();
     }
 }
