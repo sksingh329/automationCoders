@@ -15,11 +15,12 @@ public class SeleniumBrowser {
     public String getCurrentUrl(WebDriver driver){return driver.getCurrentUrl();}
     public String getPageSource(WebDriver driver){return driver.getPageSource();}
     public String getScreenShot(WebDriver driver, String fileName){
+        String currentReportFolder = System.getProperty("reportFolder");
         String random = RandomStringUtils.randomAlphanumeric(4);
         String fileSuffix = Calendar.HOUR_OF_DAY+"_"+Calendar.MINUTE+"_"+Calendar.SECOND+"_"+random;
         TakesScreenshot screenshot = (TakesScreenshot)driver;
         File source = screenshot.getScreenshotAs(OutputType.FILE);
-        String destination = System.getProperty("user.dir")+ "/executionReports/screenShots/web/" +fileName+fileSuffix+".png";
+        String destination = currentReportFolder+"/web/" +fileName+fileSuffix+".png";
         try {
             FileUtils.copyFile(source,new File(destination));
         } catch (IOException e) {

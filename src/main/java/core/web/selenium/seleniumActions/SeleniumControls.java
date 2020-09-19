@@ -2,6 +2,7 @@ package core.web.selenium.seleniumActions;
 
 import exceptions.CustomExceptions;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import reports.extent.ReporterUtils;
@@ -87,7 +88,7 @@ public class SeleniumControls extends SeleniumDropDown {
             elemText = elem.getText();
         }
         catch (Exception ex) {
-            String screenshotPath = getScreenShot(driver,"CLick");
+            String screenshotPath = getScreenShot(driver,"Click");
             String errorMessage = "Exception occurred while getText operation <p>elem - "+ locator +"</p>~=/ExceptionMessage -"+ ex.getMessage();
             throw new CustomExceptions(methodName,errorMessage,screenshotPath);
         }
@@ -99,4 +100,29 @@ public class SeleniumControls extends SeleniumDropDown {
             ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Text is retrieved from element <p>elem - "+locator+"</p> Output - "+elemText);
         return elemText;
     }
+    public boolean isEnabled(WebElement elem){
+        return isEnabled(elem,false,null,null);
+    }
+    public boolean isEnabled(WebElement elem,boolean takeScreenshot,WebDriver driver,String screenshotName){
+        String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
+        String locator = getLocator(elem.toString());
+        boolean elemIsEnabled = false;
+        try{
+            elemIsEnabled = elem.isEnabled();
+        }
+        catch (Exception ex) {
+            String screenshotPath = getScreenShot(driver,"Click");
+            String errorMessage = "Exception occurred while checking if element is Enabled <p>elem - "+ locator +"</p>~=/ExceptionMessage -"+ ex.getMessage();
+            throw new CustomExceptions(methodName,errorMessage,screenshotPath);
+        }
+        if(takeScreenshot){
+            String screenshotPath = getScreenShot(driver,screenshotName);
+            ReporterUtils.logWithScreenshot(ReporterUtils.Status.PASS,methodName,"Is element enabled? <p>elem - "+locator+"</p> Output - "+elemIsEnabled,screenshotPath);
+        }
+        else
+            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Is element enabled? <p>elem - "+locator+"</p> Output - "+elemIsEnabled);
+        return elemIsEnabled;
+    }
+    public boolean isDisplayed(WebElement elem){return elem.isDisplayed();}
+    public boolean isSelected(WebElement elem){return elem.isSelected();}
 }

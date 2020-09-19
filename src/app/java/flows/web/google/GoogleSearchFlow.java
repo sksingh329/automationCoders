@@ -27,36 +27,18 @@ public class GoogleSearchFlow extends BaseWebFlow {
         }
         return searchResultStat;
     }
-    public void validateGoogleMenusIsEnabled(){
+    public boolean validateGoogleMenusIsEnabled(){
         String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
         GoogleSearchPage searchPage = new GoogleSearchPage(driver);
-        if(searchPage.isLinkGmailEnabled())
-            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Gmail link is enabled on Google Search Page.");
-        else
-            ReporterUtils.log(ReporterUtils.Status.FAIL,methodName,"Gmail link is enabled on Google Search Page.");
-        if(searchPage.isLinkImagesEnabled())
-            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Images link is enabled on Google Search Page.");
-        else
-            ReporterUtils.log(ReporterUtils.Status.FAIL,methodName,"Images link is enabled on Google Search Page.");
-        if(searchPage.isLinkGoogleAppsEnabled())
-            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Google Apps link is enabled on Google Search Page.");
-        else
-            ReporterUtils.log(ReporterUtils.Status.FAIL,methodName,"Google Apps link is enabled on Google Search Page.");
-        if(searchPage.isLinkSignInEnabled())
-            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Sign In link is enabled on Google Search Page.");
-        else
-            ReporterUtils.log(ReporterUtils.Status.FAIL,methodName,"Sign In link is enabled on Google Search Page.");
+        return searchPage.isLinkGmailEnabled() &&
+        searchPage.isLinkImagesEnabled() &&
+        searchPage.isLinkGoogleAppsEnabled() &&
+        searchPage.isLinkSignInEnabled();
     }
-    public void validateGoogleSearchControlsAreEnabled(){
+    public boolean validateGoogleSearchControlsAreEnabled(){
         String methodName = Thread.currentThread().getStackTrace()[1].getClassName() +"." + Thread.currentThread().getStackTrace()[1].getMethodName();
         GoogleSearchPage searchPage = new GoogleSearchPage(driver);
-        if(searchPage.isBtnGoogleSearchEnabled())
-            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"Google Search Button is enabled on Google Search Page.");
-        else
-            ReporterUtils.log(ReporterUtils.Status.FAIL,methodName,"Google Search Button link is enabled on Google Search Page.");
-        if(searchPage.isBtnImFellingLuckyEnabled())
-            ReporterUtils.log(ReporterUtils.Status.PASS,methodName,"I'm felling Lucky Button is enabled on Google Search Page.");
-        else
-            ReporterUtils.log(ReporterUtils.Status.FAIL,methodName,"I'm felling Lucky Button link is enabled on Google Search Page.");
+        return searchPage.isBtnGoogleSearchEnabled() &&
+        searchPage.isBtnImFellingLuckyEnabled();
     }
 }

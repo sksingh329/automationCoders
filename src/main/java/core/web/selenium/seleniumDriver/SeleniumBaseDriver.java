@@ -12,9 +12,9 @@ public class SeleniumBaseDriver {
     }
 
     //TODO - Add code for handling browser - getTitle, getWindowHandle, pageRefresh
-    public String getTitle(){return driver.getTitle();}
     public void quitBrowser(){
-        driver.close();
+        driver.quit();
+        WebDriverFactory.getInstance().releaseDriver();
     }
     public void cleanCookies(){
         driver.manage().deleteAllCookies();

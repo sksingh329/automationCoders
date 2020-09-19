@@ -1,33 +1,32 @@
 package apps.web.google;
 
 import flows.web.google.GmailFlow;
-import org.apache.logging.log4j.Logger;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import utils.HandlePropertiesFile;
+import utils.assertions.TestValidations;
 
 import java.util.Properties;
 
 @Listeners(reports.listeners.TestNGListener.class)
-public class GmailTest {
+public class GmailTest{
     public Properties env;
-    public Logger log;
     GmailFlow gmailFlow;
+    TestValidations validate;
 
     @BeforeMethod
     public void getGmailApp(){
         env = HandlePropertiesFile.loadProperties("src/test/resources/env/", "ENV_WEB_GMAIL_PROD.properties");
-        //log = CustomLogger.getLogger(GmailTest.class.getName());
+        validate = new TestValidations();
         gmailFlow = new GmailFlow(env.getProperty("browser"),env.getProperty("appUrl"));
     }
-    @Test(enabled = false)
+    @Test
     public void validateGmailTitle(){
         String expectedTitle = "Gmail";
         String actualTitle = gmailFlow.gmailTitle();
-        Assert.assertEquals(actualTitle,expectedTitle);
+        validate.checkEquals("Validate title: ",actualTitle,expectedTitle);
     }
     @AfterMethod
     public void quitBrowser(){

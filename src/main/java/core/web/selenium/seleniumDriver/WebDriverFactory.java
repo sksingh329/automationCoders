@@ -37,4 +37,7 @@ public class WebDriverFactory {
         }
         return threadLocal.get();
     }
+    public void releaseDriver(){
+        threadLocal.remove();
+    }
 }

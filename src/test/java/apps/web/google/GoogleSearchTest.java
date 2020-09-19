@@ -1,20 +1,15 @@
 package apps.web.google;
 
-
 import flows.web.google.GoogleSearchFlow;
-import org.apache.logging.log4j.Logger;
-import org.testng.Assert;
 import org.testng.annotations.*;
 import utils.assertions.TestValidations;
 import utils.HandlePropertiesFile;
 
 import java.util.Properties;
 
-
 @Listeners(reports.listeners.TestNGListener.class)
-public class GoogleSearchTest {
+public class GoogleSearchTest{
     public Properties env;
-    public Logger log;
     GoogleSearchFlow googleSearch;
     TestValidations validate;
     @BeforeMethod
@@ -25,16 +20,16 @@ public class GoogleSearchTest {
     }
     @Test(testName = "Validate Google Menu Controls Are Enabled")
     public void validateGoogleMenusControlsAreEnabled(){
-        googleSearch.validateGoogleMenusIsEnabled();
+        validate.checkTrue("Verify menus on Google Home page are enabled",googleSearch.validateGoogleMenusIsEnabled());
     }
     @Test(testName = "Validate Google Search Controls Are Enabled")
     public void validateGoogleSearchControlsAreEnabled(){
-        googleSearch.validateGoogleSearchControlsAreEnabled();
+        validate.checkTrue("Verify search controls on Google Home page are enabled",googleSearch.validateGoogleSearchControlsAreEnabled());
     }
     @Test(testName = "Google Search",dataProvider = "googleSearchTestData")
     public void googleSearchTest(String searchValue){
         String resultStat = googleSearch.googleSearch(searchValue);
-        validate.checkNotNull(resultStat);
+        validate.checkNotNull("Verify Search on Google is successfully performed",resultStat);
     }
     @DataProvider
     public Object[][] googleSearchTestData(){

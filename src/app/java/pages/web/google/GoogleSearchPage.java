@@ -20,22 +20,22 @@ public class GoogleSearchPage extends BaseWebPage {
     }
 
     public boolean isBtnGoogleSearchEnabled(){
-        return isEnabled(pageDriver,btnGoogleSearch);
+        return isEnabled(getWebElement(pageDriver,btnGoogleSearch));
     }
     public boolean isBtnImFellingLuckyEnabled(){
-        return isEnabled(pageDriver,btnImFellingLucky);
+        return isEnabled(getWebElement(pageDriver,btnImFellingLucky));
     }
     public boolean isLinkGmailEnabled(){
-        return isEnabled(pageDriver,linkGmail);
+        return isEnabled(getWebElement(pageDriver,linkGmail));
     }
     public boolean isLinkImagesEnabled(){
-        return isEnabled(pageDriver,linkImages);
+        return isEnabled(getWebElement(pageDriver,linkImages));
     }
     public boolean isLinkGoogleAppsEnabled(){
-        return isEnabled(pageDriver,linkGoogleApps);
+        return isEnabled(getWebElement(pageDriver,linkGoogleApps));
     }
     public boolean isLinkSignInEnabled(){
-        return isEnabled(pageDriver,linkSignIn);
+        return isEnabled(getWebElement(pageDriver,linkSignIn));
     }
     public GoogleResultPage doSearch(String text){
         type(getWebElement(pageDriver,txtGoogleSearch),text);

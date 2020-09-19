@@ -6,6 +6,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import core.web.selenium.seleniumActions.SeleniumBrowser;
 import io.github.bonigarcia.wdm.managers.SeleniumServerStandaloneManager;
+import org.apache.logging.log4j.core.util.JsonUtils;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -16,7 +17,7 @@ import reports.extent.ExtentReporter;
 import java.io.IOException;
 import java.util.List;
 
-public class TestNGListener extends SeleniumBrowser implements ITestListener {
+public class TestNGListener implements ITestListener {
     ExtentReports report = ExtentReporter.getReporter();
     ExtentTest test;
     public ThreadLocal<ExtentTest> extentTestThreadLocal = new ThreadLocal<>();
@@ -116,7 +117,6 @@ public class TestNGListener extends SeleniumBrowser implements ITestListener {
     }
     @Override
     public void onFinish(ITestContext context) {
-        System.out.println("***Execution completed***");
         report.flush();
     }
 }
