@@ -41,4 +41,19 @@ public class GoogleSearchFlow extends BaseWebFlow {
         return searchPage.isBtnGoogleSearchEnabled() &&
         searchPage.isBtnImFellingLuckyEnabled();
     }
+    public void scrollToNext(String searchText){
+        GoogleSearchPage searchPage = new GoogleSearchPage(driver);
+        GoogleResultPage googleResultPage = searchPage.doSearch(searchText);
+        googleResultPage.scrollToNextButton();
+    }
+    public String navigateGooglePage(String searchText,String navigation){
+        GoogleSearchPage searchPage = new GoogleSearchPage(driver);
+        GoogleResultPage googleResultPage = searchPage.doSearch(searchText);
+        googleResultPage.getTitleAfterBrowserNavigation("back");
+        return googleResultPage.getTitleAfterBrowserNavigation("forward");
+    }
+    public String navigateForwardGooglePage(String navigation){
+        GoogleResultPage googleResultPage = new GoogleResultPage(driver);
+        return googleResultPage.getTitleAfterBrowserNavigation(navigation);
+    }
 }

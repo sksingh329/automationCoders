@@ -15,4 +15,12 @@ public class GmailFlow extends BaseWebFlow {
         GmailHomePage gmailHomePage = new GmailHomePage(driver);
         return gmailHomePage.getGmailHomePageTitle();
     }
+    public boolean isGmailHomePageControlsAreEnabled(){
+        GmailHomePage gmailHomePage = new GmailHomePage(driver);
+        return gmailHomePage.isTxtEmailPhoneEnabled() &&
+                gmailHomePage.isBtnEmailOrPhoneEnabled() &&
+                gmailHomePage.isBtnNextEnabled() &&
+                gmailHomePage.isLinkCreateAccountEnabled() &&
+                gmailHomePage.isLinkLearnMoreEnabled();
+    }
 }

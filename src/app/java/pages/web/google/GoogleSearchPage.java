@@ -20,26 +20,26 @@ public class GoogleSearchPage extends BaseWebPage {
     }
 
     public boolean isBtnGoogleSearchEnabled(){
-        return isEnabled(getWebElement(pageDriver,btnGoogleSearch));
+        return isEnabled(getWebElement(pageDriver,btnGoogleSearch),pageDriver);
     }
     public boolean isBtnImFellingLuckyEnabled(){
-        return isEnabled(getWebElement(pageDriver,btnImFellingLucky));
+        return isEnabled(getWebElement(pageDriver,btnImFellingLucky),pageDriver);
     }
     public boolean isLinkGmailEnabled(){
-        return isEnabled(getWebElement(pageDriver,linkGmail));
+        return isEnabled(getWebElement(pageDriver,linkGmail),pageDriver);
     }
     public boolean isLinkImagesEnabled(){
-        return isEnabled(getWebElement(pageDriver,linkImages));
+        return isEnabled(getWebElement(pageDriver,linkImages),pageDriver);
     }
     public boolean isLinkGoogleAppsEnabled(){
-        return isEnabled(getWebElement(pageDriver,linkGoogleApps));
+        return isEnabled(getWebElement(pageDriver,linkGoogleApps),pageDriver);
     }
     public boolean isLinkSignInEnabled(){
-        return isEnabled(getWebElement(pageDriver,linkSignIn));
+        return isEnabled(getWebElement(pageDriver,linkSignIn),pageDriver);
     }
     public GoogleResultPage doSearch(String text){
-        type(getWebElement(pageDriver,txtGoogleSearch),text);
-        click(getWebElement(pageDriver,btnGoogleSearch),true,pageDriver,"GoogleSearch");
+        type(getWebElement(pageDriver,txtGoogleSearch),text,pageDriver);
+        click(getWebElement(pageDriver,btnGoogleSearch),pageDriver,true,"GoogleSearch");
         return new GoogleResultPage(pageDriver);
     }
 }
