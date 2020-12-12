@@ -2,6 +2,7 @@ package apps.web.google;
 
 import flows.web.google.GoogleSearchFlow;
 import org.testng.annotations.*;
+import pages.web.google.GoogleResultPage;
 import utils.assertions.TestValidations;
 import utils.HandlePropertiesFile;
 
@@ -37,6 +38,16 @@ public class GoogleSearchTest{
         data[0][0] = "Selenium";
         data[1][0] = "Appium";
         return data;
+    }
+    @Test
+    public void scrollToNextUsingJS(){
+        googleSearch.scrollToNext("Selenium");
+    }
+    @Test
+    public void browserNavigationTest(){
+        String expectedPartialText = "Selenium - Google Search";
+        String actualTitle = googleSearch.navigateGooglePage("Selenium","back");
+        validate.checkEquals("Validate title contains",actualTitle,expectedPartialText);
     }
     @AfterClass
     public void closeBrowser(){
